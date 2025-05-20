@@ -3,28 +3,34 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import bootstrap from 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Bootstrap JS
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // AOS animation styles
+
 import Einsert from './Einsert';
 import Eselect from './Eselect';
 import DepartmentList from './DepartmentList';
 import DepartmentForm from './DepartmentForm';
 import Salary from './Salary';
 import SalaryForm from './SalaryForm';
-import Login from './Login';  
+import Login from './Login';
 import Signup from './Signup';
 import Report from './Report';
-import "./App.css";
+import './App.css';
 
 const Home = () => {
-  // Initialize tooltips on mount
   useEffect(() => {
     const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
     tooltipTriggerList.map(t => new bootstrap.Tooltip(t));
+
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
   }, []);
 
   return (
     <div className="container my-5">
-      {/* Welcome Carousel */}
-      <div id="welcomeCarousel" className="carousel slide mb-4" data-bs-ride="carousel" data-bs-interval="4000">
+      <div id="welcomeCarousel" className="carousel slide mb-4" data-bs-ride="carousel" data-bs-interval="4000" data-aos="fade-in">
         <div className="carousel-inner rounded shadow-sm">
           <div className="carousel-item active bg-success text-white p-5">
             <h2>Welcome to Employee Payroll Management System</h2>
@@ -49,10 +55,9 @@ const Home = () => {
         </button>
       </div>
 
-      {/* Action Cards */}
-      <div className="row text-center">
+      <div className="row text-center" data-aos="fade-up">
         <div className="col-md-6 mb-4">
-          <div className="card shadow-sm h-100">
+          <div className="card shadow-sm h-100" data-aos="zoom-in">
             <div className="card-body d-flex flex-column justify-content-center">
               <h3 className="card-title">Department Management</h3>
               <p className="card-text">Add new departments or view existing ones with ease.</p>
@@ -70,7 +75,7 @@ const Home = () => {
         </div>
 
         <div className="col-md-6 mb-4">
-          <div className="card shadow-sm h-100">
+          <div className="card shadow-sm h-100" data-aos="zoom-in">
             <div className="card-body d-flex flex-column justify-content-center">
               <h3 className="card-title">Salary & Reports</h3>
               <p className="card-text">Handle employee salaries and generate reports efficiently.</p>
@@ -88,8 +93,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Modal Trigger Button */}
-      <div className="text-center mt-5">
+      <div className="text-center mt-5" data-aos="fade-up">
         <button
           type="button"
           className="btn btn-primary btn-lg"
@@ -100,9 +104,8 @@ const Home = () => {
         </button>
       </div>
 
-      {/* Modal */}
       <div className="modal fade" id="welcomeModal" tabIndex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
-        <div className="modal-dialog modal-dialog-centered">
+        <div className="modal-dialog modal-dialog-centered" data-aos="zoom-in">
           <div className="modal-content">
             <div className="modal-header bg-primary text-white">
               <h5 className="modal-title" id="welcomeModalLabel">Welcome!</h5>
@@ -122,7 +125,7 @@ const Home = () => {
 };
 
 const Department = () => (
-  <div className="text-center mt-4">
+  <div className="text-center mt-4" data-aos="fade-up">
     <h2>Department Management</h2>
     <div className="d-flex flex-column align-items-center gap-3 mt-3">
       <Link to="/department/add" className="btn btn-primary btn-lg">
@@ -136,10 +139,16 @@ const Department = () => (
 );
 
 const App = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  }, []);
+
   return (
     <Router>
       <div className="d-flex flex-column min-vh-100">
-        {/* Navbar */}
         <nav className="navbar navbar-expand-lg navbar-dark bg-success">
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
@@ -159,41 +168,43 @@ const App = () => {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav ms-auto">
                 <li className="nav-item">
-                  <Link className="nav-link" to="/home">
-                    <i className="bi bi-house-door-fill me-1"></i> Home
-                  </Link>
+                  <Link className="nav-link" to="/home"><i className="bi bi-house-door-fill me-1"></i> Home</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/employees">
-                    <i className="bi bi-people-fill me-1"></i> Employees
-                  </Link>
+                  <Link className="nav-link" to="/employees"><i className="bi bi-people-fill me-1"></i> Employees</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/department">
-                    <i className="bi bi-building me-1"></i> Department
-                  </Link>
+                  <Link className="nav-link" to="/department"><i className="bi bi-building me-1"></i> Department</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/salary">
-                    <i className="bi bi-cash-coin me-1"></i> Salary
-                  </Link>
+                  <Link className="nav-link" to="/salary"><i className="bi bi-cash-coin me-1"></i> Salary</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/report">
-                    <i className="bi bi-clipboard-data me-1"></i> Report
-                  </Link>
+                  <Link className="nav-link" to="/report"><i className="bi bi-clipboard-data me-1"></i> Report</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/">
-                    <i className="bi bi-box-arrow-right me-1"></i> Logout
-                  </Link>
+                  <Link className="nav-link" to="/"><i className="bi bi-box-arrow-right me-1"></i> Logout</Link>
+                </li>
+                <li className="nav-item d-flex align-items-center ms-3">
+                  <div className="form-check form-switch text-white mb-0">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="darkModeToggle"
+                      onChange={() => {
+                        document.body.classList.toggle('dark-mode');
+                      }}
+                    />
+                    <label className="form-check-label" htmlFor="darkModeToggle" style={{ userSelect: 'none' }}>
+                      Dark Mode
+                    </label>
+                  </div>
                 </li>
               </ul>
             </div>
           </div>
         </nav>
 
-        {/* Content */}
         <div className="flex-grow-1">
           <Routes>
             <Route path="/home" element={<Home />} />
@@ -210,7 +221,6 @@ const App = () => {
           </Routes>
         </div>
 
-        {/* Footer */}
         <footer className="bg-success text-white py-4 mt-auto">
           <div className="container text-center">
             <p className="mb-1">&copy; {new Date().getFullYear()} Employee Payroll Management System. All Rights Reserved.</p>
