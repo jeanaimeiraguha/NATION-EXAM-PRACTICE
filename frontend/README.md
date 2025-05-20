@@ -13,7 +13,10 @@ I wanted to challenge myself to build something **functional, responsive, and po
 ### Frontend Magic ✨
 - **React** — For building the user interface with components that are easy to maintain  
 - **Vite** — Lightning-fast dev server with Hot Module Replacement (HMR) for instant feedback  
-- **Bootstrap 5 + Bootstrap Icons** — Clean, responsive design & beautiful icons without the hassle  
+- **Bootstrap 5 + Bootstrap Icons** — Clean, responsive design & beautiful icons without the hassle
+
+- ** Tailwind as extra ................. **
+
 - **AOS (Animate On Scroll)** — Adding smooth animations that catch your eye as you scroll  
 - **ESLint** — Keeping my code neat and error-free with linting rules  
 
