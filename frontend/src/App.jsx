@@ -33,7 +33,7 @@ const Home = () => {
       <div id="welcomeCarousel" className="carousel slide mb-4" data-bs-ride="carousel" data-bs-interval="4000" data-aos="fade-in">
         <div className="carousel-inner rounded shadow-sm">
           <div className="carousel-item active bg-success text-white p-5">
-            <h2>Welcome to Employee Payroll Management System</h2>
+            <h2>Welcome to  Smart Park Rwanda</h2>
             <p>Your one-stop solution for efficient and secure payroll management.</p>
           </div>
           <div className="carousel-item bg-primary text-white p-5">
