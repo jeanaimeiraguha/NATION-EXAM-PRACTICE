@@ -38,7 +38,8 @@ I wanted to challenge myself to build something **functional, responsive, and po
 
 Ready to explore the app locally? Follow these quick steps:
 
-1. **Clone this repo**  
+### Installation Guidelines
+
+1. **Clone the repository**  
    ```bash
    git clone https://github.com/jeanaimeiraguha/your-project.git
-   cd your-project/frontend
