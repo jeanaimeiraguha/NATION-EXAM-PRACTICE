@@ -24,6 +24,9 @@ I wanted to challenge myself to build something **functional, responsive, and po
 
 ---
 
+## For packages installed please review my package.json  in frontend
+
+
 ## ✨ Features You’ll Love
 
 - Fully **responsive design** — looks great on any device  
